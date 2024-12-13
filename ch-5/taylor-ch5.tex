@@ -1,0 +1,583 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath, physics}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of Modern Physics for Scientists and Engineers - John Taylor}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\diam}{\text{diam}}
+\newcommand{\cl}{\text{cl}}
+\newcommand{\bdry}{\text{bdry}}
+\newcommand{\inter}{\text{int}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hattheta}{\bm{\hat{\theta}}}
+
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+\renewcommand*{\proofname}{\bf{Solution}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 5 - Quantization of Atomic Energy Levels}
+
+\begin{proof}{\textbf{5.1}}
+    Rydberg formula states that
+    \begin{align*}
+        \frac{1}{\lambda} = R\bigg(\frac{1}{n'^2} - \frac{1}{n^2}\bigg)
+    \end{align*}
+    And with $n = 4$ and $n' = 3$ we have that
+    \begin{align*}
+        \frac{1}{\lambda} &= 0.0110\bigg(\frac{1}{3^2} - \frac{1}{4^2}\bigg)\\
+        \frac{1}{\lambda} &= 0.00053472\\
+        \lambda &= 1870.1298~nm 
+    \end{align*}
+    This wavelength correspond to infrared light.
+\end{proof}
+\begin{proof}{\textbf{5.3}}
+    The energy of photons is given by the equation
+    \begin{align*}
+        E_\gamma = hcR\bigg(\frac{1}{n'^2} - \frac{1}{n^2}\bigg)
+        \quad \text{with} \quad n > n'
+    \end{align*}
+    Then the upper limit of energies will be given for big values of $n$ and
+    $n'$, hence if $n \to \infty$ and $n' \to \infty$ we get that
+    \begin{align*}
+        E_\gamma &= hcR\bigg(0 - 0\bigg)\\
+        E_\gamma &= 0~eV
+    \end{align*}
+    For the lower limit we need to consider big values of $n'$ and small
+    values of $n$ hence if $n' \to \infty$ and $n = 1$ we get that
+    \begin{align*}
+        E_\gamma &= hcR\bigg(0 - \frac{1}{1^2}\bigg)\\
+        E_\gamma &= -1240~[eV\cdot nm] \cdot 0.0110~[nm^{-1}]\\
+        E_\gamma &= -13.63~eV
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.8}}
+    % a_B = = 0.0529~nm
+    \begin{itemize}
+    \item [(a)]
+    We know that $a_B = \hbar^2 / ke^2 m$ hence we can write
+    Rydberg energy as
+    \begin{align*}
+        E_R &= \frac{ke^2}{2a_B}\\
+            &= ke^2\frac{ke^2 m}{\hbar^2}\\
+            &= \frac{ke^2}{2}\frac{ke^2 m}{\hbar^2}\\
+            &= \frac{m (ke^2)^2}{2\hbar^2}
+    \end{align*}
+    Which verifies that the two definition are  equivalent.
+
+    \item [(b)] Given that $ke^2 = 1.44~eV\cdot nm$ and $a_B = 0.0529~nm$
+    we ge that
+    \begin{align*}
+        E_R &= \frac{ke^2}{2a_B} = \frac{1.44~eV\cdot nm}{2 \times 0.0529~nm}
+        = 13.61~eV
+    \end{align*}
+    For the other expression, multiplying top and bottom by $c^2$
+    and using that $mc^2 = 0.510~MeV$ and $\hbar c = 197.3~eV\cdot nm$
+    we get that
+    \begin{align*}
+        E_R &= \frac{mc^2 (ke^2)^2}{2(\hbar c)^2}
+        = \frac{(0.510 \times 10^6~eV)\times(1.44~eV\cdot nm)^2}
+        {2\times (197.3~eV\cdot nm)^2}
+        = 13.58~eV
+    \end{align*}
+    \end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.9}}
+    Let a charge $q_1$ with mass $m$ in a circular orbit around a fixed charge
+    $q_2$ such that $q_2$ has the opposite sign of $q_1$.
+    Then the only force acting on $q_1$ is the Coulomb attraction of $q_2$ i.e.
+    \begin{align*}
+        F = \frac{kq_1q_2}{r^2}
+    \end{align*}
+    Where $k$ is the Coulomb force constant. Also, the centripetal acceleration
+    of $q_1$ is $a = v^2/r$, hence by Newton's second law we have that
+    \begin{align*}
+        m\frac{v^2}{r} = \frac{kq_1 q_2}{r^2}
+    \end{align*}
+    Or
+    \begin{align*}
+        mv^2 = \frac{kq_1 q_2}{r}
+    \end{align*}
+    On the other hand, we know that the kinetic energy of $q_1$ is
+    $K = \frac{1}{2}mv^2$ and the potential energy of $q_1$ in the field
+    of $q_2$ is
+    \begin{align*}
+        U = -\frac{kq_1 q_2}{r}
+    \end{align*}
+    Since $q_1$ is of opposite sign to $q_2$. Thus, joining these equations we
+    have that 
+    \begin{align*}
+        K = -\frac{1}{2} U
+    \end{align*}
+    And therefore the total energy is given by
+    \begin{align*}
+        E = K + U = -\frac{1}{2}U + U = \frac{1}{2}U 
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.10}}
+\begin{itemize}
+    \item [(a)] From the angular momentum equation $mvr = n\hbar$ and Newton's
+    second law $mv^2 = ke^2/r$ by replacing $r$ we get that
+    \begin{align*}
+        mv\bigg(\frac{ke^2}{mv^2}\bigg) &= n\hbar\\
+        \frac{ke^2}{v} &= n\hbar\\
+        v &= \frac{ke^2}{n\hbar}
+    \end{align*}
+    Which is an expression for the electron's speed in the $n$th Bohr orbit.
+    \item [(b)] Given that the speed is an inverse function of $n$ then the
+    highest speed is going to happen when $n = 1$ i.e.  
+    \begin{align*}
+        v_1 &= \frac{ke^2}{\hbar}
+    \end{align*}
+    And hence for the electron we have that
+    \begin{align*}
+        v_1 &= \frac{8.99\times 10^9~Nm^2/C^2\cdot (1.602 \times 10^{-19}~C)^2}
+        {1.054\times 10^{-34}~Js}\\
+        &= 2,188,991.64~m/s
+    \end{align*}
+    \item [(c)] Assuming that $c = 299,792,458~m/s$ then the ratio
+    \begin{align*}
+        \alpha = \frac{v_1}{c} = \frac{ke^2}{\hbar^2}
+    \end{align*}
+    is given by
+    \begin{align*}
+        \alpha = \frac{v_1}{c} = \frac{2,188,991.64~m/s}{299,792,458~m/s}
+        = 0.0073016
+    \end{align*}
+    And therefore
+    \begin{align*}
+        \alpha = 0.0073016 \approx \frac{1}{137} = 0.0072992
+    \end{align*}
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.13}}
+\begin{itemize}
+    \item [(a)] We know that $E_R$ is proportional to $m_e$ so for the muonic
+    hydrogen atom we replace $m_e$ by $m_\mu = 207\cdot m_e$ hence
+    $E_R = 207 \cdot 13.6~eV = 2815.2~eV$ so the energy of the first Bohr orbit
+    is
+    \begin{align*}
+        E_1 = - 2815.2~eV
+    \end{align*}
+    The radius of the orbit is inversely proportional to the mass $m_e$ so
+    replacing $m_e$ with $m_\mu = 207 \cdot m_e$ we get that
+    \begin{align*}
+        r = \frac{n^2 a_B}{207}
+    \end{align*}
+    Hence the radius of the first Bohr orbit is
+    \begin{align*}
+        r = \frac{0.0529}{207} = 0.000255~nm
+    \end{align*}
+    \item [(b)] The energy of the Lymann $\alpha$ line is
+    \begin{align*}
+        E_\alpha &= E_2 - E_1\\
+        &= -\frac{E_R}{2^2} + \frac{E_R}{1^2}\\
+        &= -703.8~eV + 2815.2~eV\\
+        &= 2111.39~eV
+    \end{align*}
+    Hence the wavelength is 
+    \begin{align*}
+        \lambda_\alpha = \frac{hc}{E_\alpha}
+        = \frac{1240~eV\cdot nm}{2111.4~eV}
+        = 0.587~nm
+    \end{align*}
+    This electromagnetic wavelength corresponds to X-rays.
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.14}}
+\begin{itemize}
+    \item [(a)] We know the atomic diameter is given by $d = 2n^2 a_B$
+    so if we set $d = D = 3~nm$ at normal densities the largest $n$ we can find
+    is
+    \begin{align*}
+        n = \sqrt{\frac{D}{2a_B}} = \sqrt{\frac{3~nm}{2\cdot 0.0529~nm}}
+        = 5.32 \approx 5
+    \end{align*}
+    \item [(b)] Given that $D$ is proportional to $P^{-1/3}$ then we can write
+    that
+    $$D = k P^{-1/3}$$
+    For some constant $k$ and we know that $D = 3~nm$ at a pressure of
+    $P = 1~atm$ then must be that
+    $$k = 3~nm\cdot \sqrt[3]{atm}$$
+    Also, we know that $n = \sqrt{\frac{D}{2a_B}}$ so for a pressure of
+    $1/1000~atm$ the largest $n$ we can have is
+    \begin{align*}
+        n = \sqrt{\frac{kP^{-1/3}}{2a_B}}
+        = \sqrt{\frac{3 \cdot 10}{2\cdot 0.0529~nm}}
+        = 16.83 \approx 17
+    \end{align*}
+    \item [(b)] First, we determine the equation of the pressure $P$ in terms
+    of $n$ then
+    \begin{align*}
+        \sqrt[3]{P} &= \frac{k}{2n^2a_B}\\
+        P &= \bigg(\frac{k}{2n^2a_B}\bigg)^3
+    \end{align*}
+    If we set $n = 100$ then the pressure in these experiments is
+    \begin{align*}
+        P = \bigg(\frac{3}{2\cdot 10000 \cdot 0.0529}\bigg)^3
+        = 2.279 \times 10^{-8}~atm
+    \end{align*}
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.15}}
+    The energy of a photon in the Lymann $\alpha$ line of $Fe^{25+}$ is
+    \begin{align*}
+        E_\alpha &= Z^2E_R\bigg(\frac{1}{n'^2} - \frac{1}{n^2}\bigg)\\
+            &= 26^2\cdot 13.6\cdot\bigg(\frac{1}{1^2} - \frac{1}{2^2}\bigg)\\
+            &= 6895.2~eV
+    \end{align*}
+    And hence the wavelength associated to this energy is
+    \begin{align*}
+        \lambda_\alpha = \frac{hc}{E_\alpha} = \frac{1240}{6895.2} = 0.1798~nm
+    \end{align*}
+    This wavelength corresponds to X-ray radiation.
+\end{proof}
+\begin{proof}{\textbf{5.16}}
+    The radius of the $n = 1$ orbit in the $O^{7+}$ ion is given by
+    \begin{align*}
+        r &= n^2\frac{a_B}{Z} = \frac{0.0529}{8} = 0.00661~nm
+    \end{align*}
+    The energy of a photon in the Lymann $\alpha$ line of $O^{7+}$ is
+    \begin{align*}
+        E_\alpha &= Z^2E_R\bigg(\frac{1}{n'^2} - \frac{1}{n^2}\bigg)\\
+            &= 8^2\cdot 13.6\cdot\bigg(\frac{1}{1^2} - \frac{1}{2^2}\bigg)\\
+            &= 652.8~eV
+    \end{align*}
+    And hence the wavelength associated to this energy is
+    \begin{align*}
+        \lambda_\alpha = \frac{hc}{E_\alpha} = \frac{1240}{652.8} = 1.899~nm
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.17}}
+\begin{itemize}
+    \item [\textbf{(a)}] Considering the proton as fixed then the energy of
+    a hydrogen atom is
+    \begin{align*}
+        E_R = \frac{m(ke^2)^2}{2\hbar^2} = 13.60569~eV
+    \end{align*}
+    but if we take into account the movement of the nucleus via the reduced
+    mass we get that
+    \begin{align*}
+        E_R' &= \frac{E_R}{1+ m/m_{nuc}}
+        = \frac{13.60569}{1 + {9.10938\times10^{-31}/1.67262\times10^{-27}}} = \\
+        &= 13.59828~eV
+    \end{align*}
+    Then the percent error in the energy levels is
+    \begin{align*}
+        \bigg|\frac{E_R' - E_R}{E_R}\bigg| \times 100 &= 0.05446 \%
+    \end{align*}
+
+    \item [\textbf{(b)}] For a muonic hydrogen, if the proton is fixed we get
+    that
+    \begin{align*}
+        E_R^\mu = \frac{m_\mu}{m}E_R
+        = \frac{1.88353\times 10^{-28}}{9.10938\times 10^{-31}} \cdot 13.60569
+        = 2813.22387~eV
+    \end{align*}
+    But if the proton is moving we have that
+    \begin{align*}
+        {E_R^\mu}' &= \frac{E_R^\mu}{1+ m_\mu/m_{nuc}}
+        = \frac{2813.22387}{1 + {1.88353\times 10^{-28}/1.67262\times10^{-27}}}
+        = \\
+        &= 2528.49155~eV
+    \end{align*}
+    Finally, the percent error in the energy levels for the muonic hydrogen is
+    \begin{align*}
+        \bigg|\frac{{E_R^\mu}' - E_R^\mu}{E_R^\mu}\bigg| \times 100
+        &=  10.12121\%
+    \end{align*}
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.18}}
+    We want to find the ground-state energy of positronium, this energy will
+    differ from the ground-state energy of the hydrogen only in the mass used
+    to compute it so we can write that
+    \begin{align*}
+        E_p = \frac{\mu}{m_e}E_e
+    \end{align*}
+    Where $\mu = m_e/(1 + m_e/m_{nuc})$ is the reduced mass for the positronium.
+    Then
+    \begin{align*}
+        \mu &= \frac{m_e}{1 + m_e/m_{nuc}}\\
+        &= \frac{9.1093\times 10^{-31}}
+        {1 + (9.1093\times 10^{-31}/9.1093\times 10^{-31})}\\
+        &= 4.5546 \times 10^{-31}~kg
+    \end{align*}
+    Hence
+    \begin{align*}
+        E_p = \frac{4.5546 \times 10^{-31}}{9.1093\times 10^{-31}} \times -13.7~eV
+         = \frac{-13.7~eV}{2}
+        = -6.8~eV 
+    \end{align*}
+
+\end{proof}
+% \cleardoublepage
+\begin{proof}{\textbf{5.20}}
+\begin{itemize}
+    \item [(a)] We know that the orbital radius is given by
+    \begin{align*}
+        r = n^2\frac{a_B}{Z}
+    \end{align*}
+    Where $a_B$ was calculated using the electron mass $m_e$ so we can compute
+    what the orbital radius for a $\pi^-$ captured in the $n = 1$ orbit by
+    a carbon nucleus as follows
+    \begin{align*}
+        r = n^2\frac{a_B}{Z}\frac{m_e}{m_\pi}
+        = n^2\frac{a_B}{Z}\frac{m_e}{273 m_e}
+        = n^2\frac{a_B}{273 Z}
+    \end{align*}
+    Hence
+    \begin{align*}
+        r = \frac{0.0529}{273 \times 6} = 3.2295 \times 10^{-5}~nm
+    \end{align*}
+    \item [(a)] Given that the carbon nucleus has a radius
+    $R \approx 3\times 10^{-6}~nm$ the $\pi^-$ orbit can be formed.
+    \item [(c)] For a lead nucleus we have that the $\pi^-$ orbital radius is 
+    \begin{align*}
+        r = \frac{0.0529}{273 \times 82} = 2.3630\times 10^{-6}~nm
+    \end{align*}
+    But the lead nucleus has a radius of $R \approx 7 \times 10^{-6}~nm$
+    so the $\pi^-$ would have a smaller orbit and hence the orbit cannot be
+    formed.
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.21}}
+\begin{itemize}
+    \item [(a)] Assuming the center of mass is at the origin of the system by
+    the equation for the coordinates of the center of mass we have that
+    $m_er_e - m_p r_p = 0$ or $m_e r_e = m_p r_p$ also we know that
+    $r = r_e + r_p$ hence
+    \begin{align*}
+        r &= r_e + \frac{m_e}{m_p}r_e\\
+        r &= r_e\bigg(1 + \frac{m_e}{m_p}\bigg)\\
+        r_e &= \frac{m_p}{m_p + m_e}r
+    \end{align*}
+    And for $r_p$ we get that
+    \begin{align*}
+        r &= \frac{m_p}{m_e}r_p + r_p\\
+        r &= r_p\bigg(\frac{m_p}{m_e} + 1\bigg)\\
+        r_p &= \frac{m_e}{m_p + m_e}r
+    \end{align*}
+    \item [(b)] The total kinetic energy is given by
+    \begin{align*}
+        K &= K_e + K_p\\
+        % &= \frac{1}{2}m_ev_e^2 + \frac{1}{2}m_pv_p^2\\
+        &= \frac{1}{2}m_e(r_e \omega)^2 + \frac{1}{2}m_p(r_p \omega)^2\\
+        &= \frac{1}{2}\frac{m_em_p^2}{(m_p + m_e)^2}r^2 \omega^2
+        + \frac{1}{2}\frac{m_pm_e^2}{(m_p + m_e)^2}r^2 \omega^2\\
+        &= \frac{1}{2}\frac{m_em_p(m_p + m_e)}{(m_p + m_e)^2}r^2 \omega^2\\
+        &= \frac{1}{2}\frac{m_em_p}{m_p + m_e}r^2 \omega^2
+    \end{align*}
+    Hence $K = \frac{1}{2}\mu r^2 \omega^2a$ where $\mu$ is the reduced mass.
+    \item [(c)] Applying Newton's law to the electron in addition to Coulomb's
+    law we get that
+    \begin{align*}
+        \frac{ke^2}{r^2} &= m_e\frac{v_e^2}{r_e}
+    \end{align*}
+    Replacing the formulas we have for $r_e$ and $v_e$ we get that
+    \begin{align*}
+        \frac{ke^2}{r^2} &= m_e r_e\omega^2\\
+        \frac{ke^2}{r^2} &= m_e\frac{m_p}{m_p + m_e}r \omega^2\\
+        \frac{ke^2}{r^2} &= \mu \omega^2 r
+    \end{align*}
+    \item [(d)] We know that the potential energy of an electron in the field
+    of a proton is $U = -ke^2/r$ hence from the formula derived in part (c)
+    we have that
+    \begin{align*}
+        U = -\frac{ke^2}{r} &= -\mu \omega^2 r^2
+    \end{align*}
+    Also, we know that $K = 1/2 \mu r^2 \omega^2$ so $K = -U/2$ and therefore
+    the total energy is given by
+    \begin{align*}
+        E = K + U = \frac{U}{2} = -\frac{1}{2}\frac{ke^2}{r}
+    \end{align*}
+    \item [(e)] The total angular momentum is 
+    \begin{align*}
+        L &= L_e + L_p
+    \end{align*}
+    Hence
+    \begin{align*}
+        L &= m_ev_er_e + m_pv_pr_p\\
+        &= m_er_e^2\omega + m_pr_p^2 \omega\\
+        &= \frac{m_em_p^2}{(m_p + m_e)^2}r^2\omega + \frac{m_pm_e^2}{(m_p + m_e)^2}r^2 \omega\\
+        &= \frac{m_em_p(m_p + m_e)}{(m_p + m_e)^2}r^2\omega\\
+        &= \mu r^2 \omega
+    \end{align*}
+    \item [(f)] Let $L = n\hbar$ then by the formula derived in (e) we have
+    that
+    \begin{align*}
+        \mu r^2 \omega &= n\hbar\\
+        \omega &= \frac{n\hbar}{\mu r^2}
+    \end{align*}
+    Also, we know that $\mu r \omega^2 = ke^2/r^2$ so replacing $\omega$ we get
+    that
+    \begin{align*}
+        \mu r \bigg(\frac{n\hbar}{\mu r^2}\bigg)^2 &= \frac{ke^2}{r^2}\\
+        \frac{(n\hbar)^2}{\mu r^3} &= \frac{ke^2}{r^2}\\
+        \frac{(n\hbar)^2}{\mu r} &= ke^2\\
+        r &= \frac{n^2\hbar^2}{\mu ke^2}
+    \end{align*}
+    Which gives us the allowed radii.
+    
+    Now replacing the value of $r$ in the equation we have for
+    $E$ we get that
+    \begin{align*}
+        E &= -\frac{1}{2}\frac{ke^2}{\frac{n^2\hbar^2}{\mu ke^2}}\\
+        &=-\frac{1}{2}\frac{\mu (ke^2)^2}{n^2\hbar^2}
+    \end{align*}
+    So defining 
+    \begin{align*}
+        E_R &=\frac{\mu (ke^2)^2}{2\hbar^2}
+    \end{align*}
+    We get that $E = -E_R/n^2$.
+    \item [(g)]The reduced mass is 
+    \begin{align*}
+        \mu = \frac{938.27208 \times 0.51099}{938.27208 + 0.51099}
+        = 0.51072~MeV/c^2
+    \end{align*}
+    Then the energy of the ground state of hydrogen using the reduced
+    mass give us 
+    \begin{align*}
+       E_R^\mu &= \frac{0.51072\times 10^{6} \cdot (1.44)^2}
+        {2 \cdot (6.582\times 10^{-16})^2}
+        \cdot \frac{1}{(2.998 \times 10^{17})^2}\\
+    &= 13.59874~eV
+    \end{align*}
+    But the energy of the ground state for the fixed-proton is
+    \begin{align*}
+        E_R^\mu &= \frac{0.51099\times 10^{6} \cdot (1.44)^2}
+            {2 \cdot (6.582\times 10^{-16})^2}
+            \cdot \frac{1}{(2.998 \times 10^{17})^2}\\
+        &= 13.60593~eV
+    \end{align*}
+    
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.22}}
+    From equation (5.37) we know that
+    \begin{align*}
+        E_\gamma = \frac{3}{4}(Z - \delta)^2 E_R
+    \end{align*}
+    Hence
+    \begin{align*}
+        hf &= \frac{3}{4}(Z - \delta)^2 E_R\\
+        \sqrt{f} &= \sqrt{\frac{3E_R}{4h}}(Z - \delta)
+    \end{align*}
+    Then the slope of the graph of $\sqrt f$ against $Z$ is
+    \begin{align*}
+        \sqrt{\frac{3E_R}{4h}}
+        = \sqrt{\frac{3\times 13.6}{4 \times 4.135\times 10^{-15}}}
+        = 49,666,359.63~\sqrt{Hz}
+    \end{align*}
+    And from the graph we see that the predicted slope is 
+    \begin{align*}
+        \frac{\Delta\sqrt{f}}{\Delta Z}
+        = \frac{(20\times 10^8 - 10 \times 10^8)}{40 - 20   }
+        = \frac{10\times 10^8}{20} = 50,000,000~\sqrt{Hz}
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.25}}
+    The radius of the $n = 1$ orbit of the innermost electron in the lead atom
+    is given by
+    \begin{align*}
+        r &= n^2\frac{a_B}{Z}\\
+        &= 1^2\frac{0.0529 \times 10^{-9}}{82}~m\\
+        &= 6.451 \times 10^{-13}~m
+    \end{align*}
+    Compared to the lead nucleus radius is quite far from the nucleus.
+\end{proof}
+\begin{proof}{\textbf{5.26}}
+\begin{itemize}
+    \item [(a)] Considering that $m_\mu = 207~m_e$ then the radius of the
+    muon's orbit differs from an electron orbit by a factor of 207 then
+    \begin{align*}
+        r &= n^2\frac{a_B}{207~Z}
+        = 1^2 \frac{0.0529}{207 \cdot 47}
+        = 5.437~fm
+    \end{align*}
+    The muon's orbital radius is very close to the nuclear radius so, yes,
+    it is a good approximation to ignore the atomic electrons when considering
+    the muon.
+    \item [(b)] When a muon drops from $n = 2$ to $n = 1$ the energy emitted is
+    given by
+    \begin{align*}
+        E_\gamma = Z^2 \cdot 207\cdot E_R\left(1 - \frac{1}{4}\right)
+    \end{align*}
+    Where $E_R$ depends on $m_e$ so for a muon we multiply it by 207. Then
+    \begin{align*}
+        E_\gamma = 47^2 \cdot 207\cdot 13.6\left(1 - \frac{1}{4}\right)
+        = 4664082.6 ~eV
+    \end{align*}
+    The wavelength associated to this energy is
+    \begin{align*}
+        \lambda = \frac{hc}{E_\gamma} = \frac{1240}{4664082.6}
+        = 2.65 \times 10^{-13}~m
+    \end{align*}
+    Which is a gamma ray wavelength.
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{5.27}}
+\begin{itemize}
+    \item [(a)] From conservation of momentum we have that
+    \begin{align*}
+        v_0m &= v_r M - v_f m\\
+        v_r &= \frac{m}{M}(v_0 + v_f)
+    \end{align*}
+    Where $v_r$ is the recoil velocity and $v_f$ is the electron's final
+    velocity. Then the recoil kinetic energy is 
+    \begin{align*}
+        K_r &= \frac{1}{2}Mv_r^2\\
+        &=\frac{1}{2}\frac{m^2}{M}(v_0 + v_f)^2\\
+        &=\frac{1}{2}\frac{m^2}{M}(v_0^2 + 2v_0v_f + v_f^2)
+    \end{align*}
+    But if we suppose $v_0 \approx v_f$ we get that
+    \begin{align*}
+        K_r &\approx\frac{1}{2}\frac{m^2}{M}4v_0^2 = 4\frac{m}{M}K_0
+    \end{align*}
+    \item [(b)] The maximum possible loss of kinetic energy for a 3eV electron
+    is the same as the maximum possible recoiling energy the atom can have
+    then by applying the approximation from part (a) we get that
+    \begin{align*}
+        K = 4\cdot\frac{9.10938\times 10^{-31}}{3.33091\times 10^{-25}} \cdot 3
+        = 3.281 \times 10^{-5} eV = 32.81 \mu eV 
+    \end{align*}
+\end{itemize}
+\end{proof}
+\end{document}
