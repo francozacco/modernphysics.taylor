@@ -1,0 +1,593 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath, physics}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of Modern Physics for Scientists and Engineers - John Taylor}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\diam}{\text{diam}}
+\newcommand{\cl}{\text{cl}}
+\newcommand{\bdry}{\text{bdry}}
+\newcommand{\inter}{\text{int}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hattheta}{\bm{\hat{\theta}}}
+
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+\renewcommand*{\proofname}{\bf{Solution}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 6 - Matter Waves}
+
+\begin{proof}{\textbf{6.2}}
+    The wavelength of a golf ball of mass $60 g$ with speed $30 m/s$ is given
+    by
+    \begin{align*}
+        \lambda = \frac{h}{mv}
+        = \frac{6.626 \times 10^{-34}}{0.06 \cdot 30}
+        = 3.681 \times 10^{-34}~m
+    \end{align*}
+    This is a really small amount for a macroscopic object so it's not likely
+    that the wave properties of a golf ball could be easily detected.
+\end{proof}
+\begin{proof}{\textbf{6.5}}
+    A neutron with the same wavelength as blue light ($\lambda = 450~nm$)
+    has a momentum of
+    \begin{align*}
+        p = \frac{h}{\lambda} = \frac{6.63 \times 10^{-34}}{450 \times 10^{-9}}
+        = 1.473 \times 10^{-27}~kg\cdot m/s
+    \end{align*}
+    Hence the kinetic energy is
+    \begin{align*}
+        K = \frac{1}{2}\frac{p^2}{m}
+        = \frac{1}{2}\frac{(1.473 \times 10^{-27})^2}{1.6749 \times 10^{-27}}
+        = 6.4771 \times 10^{-28}~J
+    \end{align*}
+\end{proof}
+\begin{proof}{\textbf{6.9}}
+    The relativistic energy of an electron is given by
+    \begin{align*}
+        E^2 = (pc)^2 + (mc^2)^2
+    \end{align*}
+    Hence if the electron has an energy of $E = 2~MeV$ then the momentum is
+    given by
+    \begin{align*}
+        p &= \frac{1}{c}\sqrt{E^2 - (mc^2)^2}
+        = \frac{1}{c}\sqrt{4 - (0.51)^2}
+        = 1.933~MeV/c
+    \end{align*}
+    So the wavelength is given by
+    \begin{align*}
+        \lambda &= \frac{h}{p} =
+        \frac{4.136 \times 10^{-15}~eV\cdot s}{1.933 \times 10^6~eV}
+        \cdot 2.998 \times 10^{8}~m/s
+        = 6.414 \times 10^{-13}~m\\
+        &= 0,0006414~nm
+    \end{align*}
+\end{proof}
+\begin{proof}{\textbf{6.12}}
+\begin{itemize}
+    \item [(a)] From the relativistic relation for an electron we know that
+    \begin{align*}
+        p &= \frac{1}{c}\sqrt{E^2 - (mc^2)^2}
+    \end{align*}
+    and for a photon
+    \begin{align*}
+        p &= \frac{E}{c}
+    \end{align*}
+    Hence from De Broglie, the wavelengths are
+    \begin{align*}
+        \lambda_e &= \frac{hc}{\sqrt{E^2 - (mc^2)^2}}\\
+        \lambda_{ph} &= \frac{hc}{E}
+    \end{align*}
+    So electrons and photons with the same energy $E$ have different
+    wavelengths.
+    \item [(b)] If $mc^2 \ll E$ then $(mc^2)^2$ is going to be a lot smaller
+    that $E$ hence we can approximate $\lambda_e$ by dropping the term, hence 
+    \begin{align*}
+        \lambda_e &\approx \frac{hc}{\sqrt{E^2}} = \frac{hc}{E}
+    \end{align*}
+    Which is the same wavelength for a photon.
+\end{itemize}
+\end{proof}
+\begin{proof}{\textbf{6.15}}
+    Given $3$-eV electrons where $n = 1$ maximum occurs at $15^\circ$ the slit
+    separation $d$ has to be
+    \begin{align*}
+        d &= \frac{n\lambda}{\sin\theta}
+    \end{align*}
+    Where $\lambda$ for a 3 eV electron is 
+    \begin{align*}
+        \lambda = \frac{hc}{\sqrt{2 mc^2 K}}
+        = \frac{1240}{\sqrt{2 \cdot 0.51 \times 10^6 \cdot 3}}
+        = 0.708~nm
+    \end{align*}
+    Hence
+    \begin{align*}
+        d &= \frac{0.708}{\sin(15^\circ)} = \frac{0.708}{0.258} = 2.744~nm
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{6.16}}
+    Given that the probability of finding an electron in a volume $dV$ at
+    $\bm{r}$ is
+    \begin{align*}
+        P = |\Psi(\bm{r}, t)|^2 dV
+    \end{align*}
+    and $P$ is dimensionless then $\Psi(\bm{r}, t)$ must have the dimension
+    of $1/\sqrt{\text{length}^3}$ and hence simplifying the SI units for $P$
+    gives us
+    \begin{align*}
+        \bigg|\frac{1}{\sqrt{m^3}}\bigg|^2 m^3 = 1
+    \end{align*} 
+    i.e. $P$ is dimensionless as we wanted.
+\end{proof}
+\begin{proof}{\textbf{6.19}}
+    Let $y(x,t) = A \sin(kx - \omega t)$ be a traveling wave with $A = 4~cm$,
+    $k = 12~rad/cm$, and $\omega = 2 \times 10^3~rad/s$ then the frequency
+    of the wave is
+    \begin{align*}
+        f = \frac{\omega}{2\pi} = \frac{2 \times 10^3}{2\pi} = 318.31~Hz
+    \end{align*}
+    The wavelength is
+    \begin{align*}
+        \lambda = \frac{2\pi}{k} = \frac{2\pi}{12} = 0.52~cm
+    \end{align*}
+    And hence the velocity of the wave is
+    \begin{align*}
+        v = \lambda f = 0.52 \cdot 318.31 = 165.52~cm/s
+    \end{align*}
+\end{proof}
+\begin{proof}{\textbf{6.20}}
+    The SI units of the wave parameters are
+    \begin{itemize}
+        \item [] $\lambda: [m]$
+        \item [] $T: [s]$
+        \item [] $f: [s^{-1}] = [Hz]$
+        \item [] $\omega: [rad/s]$
+        \item [] $v: [m/s]$
+    \end{itemize}
+\end{proof}
+\begin{proof}{\textbf{6.22}}
+    For X-rays with $\lambda= 0.05~nm$, $k$ is given by
+    \begin{align*}
+        k = \frac{2\pi}{\lambda} = \frac{2\pi}{0.05 \times 10^{-9}} = 125.66\times 10^9~1/m
+    \end{align*}
+    but since X-rays have speed $c$ then
+    \begin{align*}
+        f = \frac{c}{\lambda} = \frac{2.998\times 10^8}{125.66\times 10^9}
+        = 0.00238~Hz
+    \end{align*}
+    And hence $\omega$ is
+    \begin{align*}
+        \omega = 2 \pi f = 2 \pi 0.00238 = 0.0149~1/s
+    \end{align*}
+\end{proof}
+\begin{proof}{\textbf{6.23}}
+    For a non-relativistic electron we know that
+    \begin{align*}
+        E = \frac{p^2}{2m}
+    \end{align*}
+    Hence $p$ for a 300 eV electron is
+    \begin{align*}
+        p = \sqrt{2mE} = \sqrt{2\cdot 0.511 \times 10^6 \cdot 300}
+        = 17509.99~eV/c
+    \end{align*}
+    Now, by using de Broglie relation we determine $\lambda$ as follows
+    \begin{align*}
+        \lambda &= \frac{h}{p}\\
+        &= \frac{4.136\times 10^{-15}~eVs}{17509.99~eV}
+        \cdot 2.998\times 10^8~m/s\\
+        &= 7.081\times 10^{-11}~m
+    \end{align*}
+    Then $k$ is
+    \begin{align*}
+        k = \frac{2\pi}{\lambda} = \frac{2\pi}{7.081\times 10^{-11}}
+        = 88733022273.40~m^{-1}
+    \end{align*}
+\end{proof}
+\begin{proof}{\textbf{6.26}}
+\begin{itemize}
+    \item [\textbf{(a)}] Let us consider the wave
+    $y(x,t) = A\sin(2\pi(x/\lambda - t/T))$.
+    Let us focus attention on the wave crest for which the argument of the
+    sine function is $\pi/2$ then must be that
+    \begin{align*}
+        2\pi\left(\frac{x}{\lambda} - \frac{t}{T}\right) = \frac{\pi}{2}\\
+        x = \lambda\left(\frac{t}{T} + \frac{1}{4}\right)
+    \end{align*}
+    Then taking the derivative of $x$ with respect to time we get that the
+    velocity is
+    \begin{align*}
+        v = \dv{x}{t} = \frac{\lambda}{T}
+    \end{align*}
+    \item [\textbf{(b)}] If the minus sign on the wave equation is replaced
+    by a plus sign, doing the same analysis we get that 
+    \begin{align*}
+        2\pi\left(\frac{x}{\lambda} + \frac{t}{T}\right) = \frac{\pi}{2}\\
+        x = \lambda\left(\frac{1}{4} - \frac{t}{T}\right)
+    \end{align*}
+    And hence the time derivative is 
+    \begin{align*}
+        v = \dv{x}{t} = -\frac{\lambda}{T}
+    \end{align*}
+    This implies that the wave moves in the opposite direction i.e. to the
+    left. 
+\end{itemize}
+\end{proof}
+\begin{proof}{\textbf{6.27}}
+    Let a wave $\Psi = A\sin(ax - bt)$. The crests of the wave happens
+    when the argument of the sine function is $\pi/2 + 2\pi n$ where
+    $n \in \{0\} \cup \N$ this implies that
+    \begin{align*}
+        ax - bt &= \frac{\pi}{2} + 2\pi n\\
+        x &= \frac{1}{a}\left(\frac{\pi}{2} + 2\pi n + bt\right)
+    \end{align*}
+    Then taking the derivative of $x$ with respect to time we get that the
+    velocity is
+    \begin{align*}
+        v = \dv{x}{t} = \frac{b}{a}
+    \end{align*}
+\end{proof}
+\begin{proof}{\textbf{6.30}}
+\begin{itemize}
+    \item [(a)] By inspection, we see that the wave has a period approximately
+    of $5~ms$ so the fundamental frequency is $f = 1/5\times 10^{-3} = 200~Hz$.
+    \item [(b)] By inspection, we see that the highest harmonic is the number 4
+    since we see a wave added to the fundamental with a wavelength 4 times
+    shorter than the fundamental i.e. with 4 periods inside the fundamental
+    period. Its frequency is $f_4 = 1/ 1.25 \times 10^{-3} = 800~Hz$
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{6.32}}
+    From equation (6.58) we know that
+    \begin{align*}
+        A_0 = \frac{1}{\lambda} \int_0^\lambda F(x) dx
+    \end{align*}
+    Then for the case of a periodic square pulse of amplitude 1 this equation
+    becomes
+    \begin{align*}
+        A_0 &= \frac{1}{\lambda} \left[
+            \int_0^{a/2} 1~dx
+            + 0
+            + \int_0^{a/2} 1~dx
+        \right]\\
+        &= \frac{1}{\lambda} \left[\frac{a}{2} + \frac{a}{2} \right]\\
+        &= \frac{a}{\lambda}
+    \end{align*}
+    On the other hand, from equation (6.59) we know that 
+    \begin{align*}
+        A_n = \frac{2}{\lambda} \int_0^\lambda F(x)\cos\left(\frac{2n\pi x}{\lambda}\right) dx
+    \end{align*}
+    Then for this case we have that
+    \begin{align*}
+        A_n &= \frac{2}{\lambda} \left[
+        \int_0^{a/2} \cos\left(\frac{2n\pi x}{\lambda}\right) dx + 0
+        + \int_0^{a/2} \cos\left(\frac{2n\pi x}{\lambda}\right) dx
+        \right]\\
+        &=\frac{2}{\lambda} \left[
+            \frac{\lambda}{2n\pi}\sin\left(\frac{n\pi a}{\lambda}\right)
+            + \frac{\lambda}{2n\pi}\sin\left(\frac{n\pi a}{\lambda}\right)
+        \right]\\
+        &=\frac{2}{n\pi}\sin\left(\frac{n\pi a}{\lambda}\right)
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{6.33}}
+    To determine $\Delta x$ for the rectangular wave we need to determine first
+    $P(x)$ but since the height of the pulse shown must be $1/2a$ so the total
+    probability of finding a particle anwhere is 1 then we have that the
+    rms spread becomes
+    \begin{align*}
+        \Delta x &= \sqrt{
+            \int_{-\infty}^{-a} 0~dx
+            + \int_{-a}^a x^2 \left(\frac{a}{2}\right)~dx
+            \int_{a}^{\infty} 0~dx
+        }\\
+        &= \sqrt{
+            \frac{a}{2}\int_{-a}^a x^2~dx
+        }\\
+        &= \sqrt{
+            \frac{a}{2}\left[\frac{x^3}{3}\right]_{-a}^a
+        }\\
+        &= \sqrt{\frac{a^4}{3}}\\
+        &= \frac{a^2}{\sqrt{3}}
+    \end{align*} 
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{6.35}}
+\begin{itemize}
+    \item [\textbf{(a)}] Let us integrate equation (6.57) from $0$ to $\lambda$
+    then
+    \begin{align*}
+        \int_0^\lambda F(x)~dx
+        &= \int_0^\lambda
+        \sum_{n=0}^\infty A_n\cos(\frac{2n\pi x}{\lambda})~dx\\
+        &= \int_0^\lambda A_0~dx +
+        \sum_{n=1}^\infty 
+        \int_0^\lambda A_n\cos(\frac{2n\pi x}{\lambda})~dx\\
+        &= A_0 \lambda +
+        \sum_{n=1}^\infty 
+        \left[\frac{A_n\lambda}{2n\pi}\sin(\frac{2n\pi x}{\lambda})\right]_0^\lambda\\
+        &= A_0 \lambda +
+        \sum_{n=1}^\infty \frac{A_n\lambda}{2n\pi} [\sin(2n\pi) - \sin(0)]\\
+        &= A_0 \lambda
+    \end{align*}
+    Where we used that $\sin(2n\pi) = 0$ for $n \geq 0$. Therefore we have that
+    \begin{align*}
+        A_0 = \frac{1}{\lambda}\int_0^\lambda F(x)~dx
+    \end{align*}
+    \item [\textbf{(b)}] Let us multiply equation (6.57) by
+    $\cos(2m\pi x/\lambda)$ and also integrate both sides from $0$ to $\lambda$
+    then
+    \begin{align*}
+        \int_{0}^{\lambda} F(x)\cos(\frac{2m\pi x}{\lambda})~dx
+        &= \sum_{n=0}^{\infty} \int_{0}^{\lambda} 
+        A_n \cos(\frac{2n\pi x}{\lambda})\cos(\frac{2m\pi x}{\lambda})~dx
+    \end{align*}
+    According to Appendix B
+    $\int_{0}^{\lambda} \cos(\frac{2n\pi x}{\lambda})\cos(\frac{2m\pi x}{\lambda})~dx$
+    is 0 if $m \neq n$ and $\lambda/2$ if $m = n$ so we get that
+    \begin{align*}
+        \int_{0}^{\lambda} F(x)\cos(\frac{2m\pi x}{\lambda})~dx
+        &= A_m\int_{0}^{\lambda}
+        \cos^2\left(\frac{2m\pi x}{\lambda}\right)~dx\\
+        &= A_m \left[\frac{\lambda\sin(\frac{4m\pi x}{\lambda})}{8m\pi}
+        + \frac{x}{2} \right]_{0}^{\lambda}\\
+        &= A_m \frac{\lambda}{2}
+    \end{align*}
+    Where we used that $\sin(4m\pi) = 0$ for $m \geq 0$. Therefore we have that
+    \begin{align*}
+        A_m = \frac{2}{\lambda}
+        \int_{0}^{\lambda} F(x)\cos(\frac{2m\pi x}{\lambda})~dx
+    \end{align*}
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{6.36}}
+\begin{itemize}
+    \item [\textbf{(a)}] The Fourier expansion of an odd function is given by
+    \begin{align*}
+        F(x) = \sum_{n=1}^\infty B_n \sin(\frac{2n\pi x}{\lambda})
+    \end{align*}
+    Then multiplying this equation by $\sin(2m\pi x/\lambda)$ and integrating
+    both sides from $0$ to $\lambda$ we get that
+    \begin{align*}
+        \int_0^\lambda F(x)\sin(\frac{2m\pi x}{\lambda})~dx
+        &= \sum_{n=1}^\infty B_n \int_0^\lambda
+        \sin(\frac{2n\pi x}{\lambda})\sin(\frac{2m\pi x}{\lambda})~dx
+    \end{align*}
+    But accoring to Appendix B
+    $\int_0^\lambda \sin(\frac{2n\pi x}{\lambda})\sin(\frac{2m\pi x}{\lambda})~dx$
+    is 0 if $m \neq n$ and $\lambda/2$ if $m = n$ then
+    \begin{align*}
+        \int_0^\lambda F(x)\sin(\frac{2m\pi x}{\lambda})~dx
+        = B_m \int_0^\lambda\sin^2\left(\frac{2m\pi x}{\lambda}\right)~dx
+        = B_m \frac{\lambda}{2}
+    \end{align*}
+    Therefore
+    \begin{align*}
+        B_m = \frac{2}{\lambda}\int_0^\lambda F(x)\sin(\frac{2m\pi x}{\lambda})~dx
+    \end{align*}
+    \item[\textbf{(b)}] For the sawtooth function if we take $\lambda = 1$
+    then $F(x)$ is defined as
+    \begin{align*}
+        F(x) = \begin{cases}
+            2x \quad&\text{ for } 0 \leq x \leq 1/2\\
+            -2x + 2 \quad&\text{ for } 1/2 \leq x \leq 1
+        \end{cases}
+    \end{align*}
+    Then the equation for Fourier coefficients become
+    \begin{align*}
+        B_n &= 2\int_0^1 F(x)\sin(2n\pi x)~dx\\
+        &= 4\Bigg[
+            \int_0^{1/2} x\sin(n\pi x)~dx + \int_{1/2}^{1} (1-x)\sin(n\pi x)~dx
+        \Bigg]\\
+        &= 4\Bigg[
+            \Bigg[
+                \frac{\sin(n\pi x)}{n^2\pi^2}
+                - \frac{x\cos(n\pi x)}{n\pi}
+            \Bigg]_0^{1/2}
+            + \Bigg[
+                \frac{(x-1)\cos(n\pi x)}{n\pi}
+                -\frac{\sin(n\pi x)}{n^2\pi^2}
+            \Bigg]_{1/2}^1
+        \Bigg]\\
+        &= 4\Bigg[
+            \Bigg[
+                \frac{\sin(n\pi/2)}{n^2\pi^2}
+                - \frac{\cos(n\pi/2)}{2n\pi}
+            \Bigg]
+            + \Bigg[
+                - \frac{\sin(n\pi)}{n^2\pi^2}
+                + \frac{\cos(n\pi/2)}{2n\pi}
+                + \frac{\sin(n\pi/2)}{n^2\pi^2}
+            \Bigg]
+        \Bigg]\\
+        &= 4\Bigg[
+            \frac{2\sin(n\pi/2)}{n^2\pi^2} - \frac{\sin(n\pi)}{n^2\pi^2}
+        \Bigg]\\
+        &= \frac{32\sin^3(n\pi/4)\cos(n\pi/4)}{n^2\pi^2}
+    \end{align*}
+    If $n$ is even we have that $B_n = 0$ since $\sin(n\pi/2) = \sin(n\pi) = 0$
+    but if $n$ is odd we see that
+    \begin{align*}
+        B_1 &= \frac{32\sin^3(\pi/4)\cos(\pi/4)}{\pi^2} = \frac{8}{\pi^2}\\
+        B_3 &= \frac{32\sin^3(3\pi/4)\cos(3\pi/4)}{3^2\pi^2} = -\frac{8}{3^2\pi^2}\\
+        B_5 &= \frac{32\sin^3(5\pi/4)\cos(5\pi/4)}{5^2\pi^2} = \frac{8}{5^2\pi^2}\\
+        B_7 &= \frac{32\sin^3(7\pi/4)\cos(7\pi/4)}{7^2\pi^2} = -\frac{8}{7^2\pi^2}
+    \end{align*}
+    Then we can say that
+    \begin{align*}
+        B_n = \frac{8(-1)^{(n-1)/2}}{n^2\pi^2}
+    \end{align*}
+\end{itemize}
+\end{proof}
+\begin{proof}{\textbf{6.37}}
+    The proton is known to be within an interval of $\pm 6~fm$ then the spread
+    in the position is certainly no larger than $6~fm$ i.e.
+    $$\Delta x \leq 6~fm$$
+    According to the uncertainty relation, this implies that the momentum is
+    uncertain by an amount
+    $$\Delta p \geq \frac{\hbar}{2\Delta x}
+    = \frac{1.054 \times 10^{-34}~Js}{1.2\times 10^{-14}~m}
+    = 8.78\times 10^{-21}~kg~m/s$$
+    Therefore, the minimum uncertainty in its velocity is
+    $$\Delta v = \frac{\Delta p}{m}
+    \geq \frac{8.78\times 10^{-21}}{1.672\times 10^{-27}}
+    = 5251196.17~m/s$$
+    Or as a fraction of $c$ we get that
+    $$5251196.17\cdot \frac{c}{2.998\times 10^8} = 0.017c$$
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{6.39}}
+    The position of a $60~g$ golf ball sitting on a tee is determined within
+    $\pm1~\mu m$ then the spread in the position is certainly no larger than
+    $1~\mu m$ i.e.
+    \begin{align*}
+        \Delta x \leq 1~\mu m
+    \end{align*}
+    Then the momentun is uncertain by
+    $$\Delta p \geq \frac{\hbar}{2\Delta x}
+    \geq \frac{1.054 \times 10^{-34}~Js}{2\times 10^{-6}~m}
+    = 5.27\times 10^{-29}~kg~m/s$$
+    Then the minimum possible energy is given by
+    $$\langle K\rangle \geq \frac{(\Delta p)^2}{2m}
+    = \frac{(5.27\times 10^{-29})^2}{2\cdot 0.06}
+    =2.31 \times 10^{-56} J$$
+    The corresponding velocity associated to this kinetic energy is uncertain
+    by
+    $$\Delta v = \frac{\Delta p}{m} \geq
+    \frac{5.27 \times 10^{-29}}{0.06} = 8.78 \times 10^{-28}~m/s$$
+    Hence the ball will move in a year
+    \begin{align*}
+        8.78 \times 10^{-28}~m/s \cdot 31536000~s = 2.77 \times 10^{-20}~m 
+    \end{align*}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{6.44}}
+\begin{itemize}
+    \item [\textbf{(a)}] Using the principle of conservation of energy if we
+    assume that the body scaping will be at rest at infinity, we can write that
+    \begin{align*}
+        \frac{1}{2}mv^2 - \frac{GmM}{R} = 0
+    \end{align*}
+    Hence the velocity the body should have to scape is
+    \begin{align*}
+        v = \sqrt{\frac{2GM}{R}}
+    \end{align*}
+    \item [\textbf{(b)}] For a black hole $v_{esc}$ is computed taking the
+    radius $\Delta x$ so the energy density is large enough,
+    then by equating this to $c$ we get that 
+    \begin{align*}
+        c^2 = \frac{2GM}{\Delta x}\\
+        c^4 = \frac{2GMc^2}{\Delta x}\\
+        c^4 = \frac{2GE}{\Delta x}
+    \end{align*}
+    Where we multiplied by $c^2$ and we used that $E = mc^2$. But also for
+    a photon we know that $E = \Delta p c$ hence
+    \begin{align*}
+        c^4 = \frac{2G\Delta p c}{R_s}\\
+        c^3 = \frac{G\hbar}{\Delta x^2}\\
+        \Delta x = \sqrt{\frac{G\hbar}{c^3}}
+    \end{align*}
+    Where we used that $\Delta p = \hbar/2\Delta x$ assuming $\Delta x$ is the
+    smallest radius the black hole can have.
+    \item [\textbf{(c)}] The value of the Planck length is then
+    \begin{align*}
+        \Delta x = \sqrt{\frac{G\hbar}{c^3}}
+        = \sqrt{\frac{6.67 \times 10^{-11}\cdot 1.054 \times 10^{-34}}
+        {(2.998\times 10^8)^3}}
+        = 1.615 \times 10^{-35}~m
+    \end{align*}
+    \item [\textbf{(d)}] The diameter of a proton in meters is
+    $1.534\times 10^{-18}$ so in Planck lengths the diameter of a proton is
+    $9.498 \times 10^{16}$.
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{6.46}}
+    Given that the particle's mean life is of the order $10^{-23}~s$ then 
+    the minimum approximate uncertainty in its energy is 
+    \begin{align*}
+        \Delta E \approx \frac{\hbar}{2\Delta t}
+        = \frac{6.582 \times 10^{-16}~eVs}{2\cdot 10^{-23}~s} 
+        = 32.91~MeV
+    \end{align*}
+\end{proof}
+\begin{proof}{\textbf{6.48}}
+\begin{itemize}
+    \item [\textbf{(a)}] Given that the particle's lifetime is $1~ms$ then the
+    minimum approximate uncertainty in its energy is
+    \begin{align*}
+        \Delta E \approx \frac{\hbar}{2\Delta t}
+        = \frac{6.582 \times 10^{-16}~eVs}{2\cdot 10^{-3}~s} 
+        = 3.291 \times 10^{-13}~eV
+    \end{align*}
+    \item [\textbf{(b)}] We know that the photon will have an energy uncertainty
+    of $\Delta E = h \Delta f$ but for a photon we also have that
+    $\Delta f = c/\Delta \lambda$ then the uncertainty in wavelength is given by
+    \begin{align*}
+        \Delta \lambda = \frac{h c}{\Delta E}
+        = \frac{1240~eVnm}{3.291 \times 10^{-13}~eV}
+        = 3.767 \times 10^{15}~nm
+    \end{align*}
+    Then the fractional uncertainty is
+    \begin{align*}
+        \frac{\Delta \lambda}{\lambda}
+        = \frac{3.767 \times 10^{15}~nm}{550~nm}
+        = 6.849 \times 10^{12}
+    \end{align*}
+\end{itemize}
+\end{proof}
+\begin{proof}{\textbf{6.49}}
+    For a relativistic particle we know by the Pythagorean relation that
+    \begin{align*}
+        E &= \sqrt{(m_0c^2)^2 + (pc)^2}
+    \end{align*}
+    Where $m_0$ is the rest mass. If we consider that $m$ is the relativistic
+    mass defined as 
+    \begin{align*}
+        m = \frac{m_0}{\sqrt{1 - v^2/c^2}}
+    \end{align*}
+    Then we can write that the velocity of a relativistic free particle is
+    $$v_{part} = p/m$$
+    Also, by equation (6.56) we know that $v_{pack} = dE/dp$ therefore
+    \begin{align*}
+        v_{pack} &= \dv{p}(\sqrt{(m_0c^2)^2 + (pc)^2})
+        = \frac{pc^2}{\sqrt{(m_0c^2)^2 + (pc)^2}}
+        = \frac{pc^2}{E}
+        = \frac{pc^2}{mc^2}
+        = \frac{p}{m}
+    \end{align*}
+    Therefore even for relativistic particles we have that
+    $v_{part} = v_{pack}$.
+\end{proof}
+
+
+\end{document}
