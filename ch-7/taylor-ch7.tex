@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{amsmath, physics}
+\usepackage{bm}
+\usepackage{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[mathscr]{euscript}
+
+\title{\textbf{Solved selected problems of Modern Physics for Scientists and Engineers - John Taylor}}
+\author{Franco Zacco}
+\date{}
+
+\addtolength{\topmargin}{-3cm}
+\addtolength{\textheight}{3cm}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\diam}{\text{diam}}
+\newcommand{\cl}{\text{cl}}
+\newcommand{\bdry}{\text{bdry}}
+\newcommand{\inter}{\text{int}}
+\newcommand{\hatx}{\bm{\hat{x}}}
+\newcommand{\haty}{\bm{\hat{y}}}
+\newcommand{\hatz}{\bm{\hat{z}}}
+\newcommand{\hatrho}{\bm{\hat{\rho}}}
+\newcommand{\hatphi}{\bm{\hat{\phi}}}
+\newcommand{\hatr}{\bm{\hat{r}}}
+\newcommand{\hattheta}{\bm{\hat{\theta}}}
+
+\theoremstyle{definition}
+\newtheorem*{solution*}{Solution}
+\renewcommand*{\proofname}{\bf{Solution}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{Chapter 7 - The Schrödinger Equation in One Dimension}
+
+\begin{proof}{\textbf{7.8}}
+    Equation (7.118) states that
+    \begin{align*}
+        y(x,t) = A\sin kx\cos\omega t
+    \end{align*}
+    We know that $k = 2\pi/\lambda$ and $\omega = 2\pi/T$ hence the equation
+    becomes
+    \begin{align*}
+        y(x,t) = A\sin \frac{2\pi x}{\lambda}\cos \frac{2\pi t}{T}
+    \end{align*}
+    Let us take a point $x = x_0 + \lambda$ with $t$ fixed then
+    \begin{align*}
+        y(x_0 + \lambda,t)
+        &= A\sin \left(\frac{2\pi (x_0 + \lambda)}{\lambda}\right)
+        \cos \frac{2\pi t}{T}\\
+        &=  A\sin \left(\frac{2\pi x_0}{\lambda} + 2\pi\right)
+        \cos \frac{2\pi t}{T}\\
+        &=  A\bigg[\sin \frac{2\pi x_0}{\lambda}\cos 2\pi
+        + \cos \frac{2\pi x_0}{\lambda}\sin 2\pi \bigg]
+        \cos \frac{2\pi t}{T}\\
+        &=  A\bigg[\sin \frac{2\pi x_0}{\lambda} + 0 \bigg]
+        \cos \frac{2\pi t}{T}\\
+        &=  A\sin \frac{2\pi x_0}{\lambda}\cos \frac{2\pi t}{T}\\
+        &= y(x_0,t)
+    \end{align*}
+    Where we used the trigonometric identity
+    $\sin(\alpha + \beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta$.
+    This shows that the wave has the same value if we move from $x_0$
+    to a point $x_0 + \lambda$.
+
+    In the same way, let us take $t = t_0 + T$ with $x$ fixed then
+    \begin{align*}
+        y(x, t_0 + T)
+        &= A\sin \frac{2\pi x}{\lambda}
+        \cos \left(\frac{2\pi (t_0 + T)}{T}\right)\\
+        &= A\sin \frac{2\pi x}{\lambda}
+        \cos \left(\frac{2\pi t_0}{T} + 2\pi\right)\\
+        &= A\sin \frac{2\pi x}{\lambda}
+        \bigg[\cos\frac{2\pi t_0}{T}\cos 2\pi - \sin\frac{2\pi t_0}{T}\sin 2\pi\bigg]\\
+        &= A\sin \frac{2\pi x}{\lambda}\bigg[\cos\frac{2\pi t_0}{T} - 0\bigg]\\
+        &= A\sin \frac{2\pi x}{\lambda}\cos\frac{2\pi t_0}{T}\\
+        &= y(x, t_0)
+    \end{align*}
+    Where we used the trigonometric identity
+    $\cos(\alpha + \beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta$.
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{7.9}}
+\begin{itemize}
+    \item [\textbf{(a)}] For $t = 0.05~s$ we have that
+    \begin{center}
+        \includegraphics[scale=0.25]{ch7-7.9-1.png}
+    \end{center}
+    And for $t = 0.1~s$ we get that
+    \begin{center}
+        \includegraphics[scale=0.25]{ch7-7.9-2.png}
+    \end{center}
+\cleardoublepage
+    \item [\textbf{(b)}] Let $x$ be fixed then the derivative of (7.118) with
+    respect to $t$ gives us
+    \begin{align*}
+        \pdv{y(x,t)}{t} = -\omega A\sin kx\sin\omega t
+    \end{align*}
+    Then for $t = 0.05~s$ the transverse velocity is
+    \begin{center}
+        \includegraphics[scale=0.25]{ch7-7.9-3.png}
+    \end{center}
+    So the velocity is high when the wave function amplitude is small.
+
+    Finally, for $t = 0.1~s$ we get that
+    \begin{center}
+        \includegraphics[scale=0.25]{ch7-7.9-4.png}
+    \end{center}
+    Here the velocity is small when the wave function amplitude if significant.
+\end{itemize}
+\end{proof}
+\cleardoublepage
+\begin{proof}{\textbf{7.60}}\\
+    The standing wave is at full amplitude $(A = 1)$ at $t = 0$ and then
+    decreases as times passes.
+    \begin{center}
+        \includegraphics[scale=0.25]{ch7-7.60.png}
+    \end{center}
+\end{proof}
+\begin{proof}{\textbf{7.62}}
+    Executing \verb|ch7-7.62.py| file the required animation can be generated.
+\end{proof}
+
+\end{document}
